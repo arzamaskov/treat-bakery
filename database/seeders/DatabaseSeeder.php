@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Ingredient;
 use App\Models\Recipe;
+use App\Models\Tag;
 use App\Models\Tip;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -24,5 +25,6 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         Ingredient::factory(100)->create();
+        Tag::factory(25)->create();
     }
 }
