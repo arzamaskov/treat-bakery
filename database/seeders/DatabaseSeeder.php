@@ -6,6 +6,8 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Recipe;
+use App\Models\Tip;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,8 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Recipe::factory(20)
-            ->has(Category::factory(1))
+        User::factory(30)
+            ->has(Recipe::factory(10)->has(Category::factory(1)))
+            ->has(Tip::factory(2))
             ->create();
     }
 }
