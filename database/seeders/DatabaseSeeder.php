@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Emoji;
 use App\Models\Ingredient;
 use App\Models\Recipe;
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
         User::factory(30)
             ->has(Recipe::factory(10)->has(Category::factory(1)))
             ->has(Tip::factory(2))
+            ->has(Comment::factory(5))
             ->create();
 
         Ingredient::factory(100)->create();
