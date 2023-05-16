@@ -22,8 +22,8 @@ class Tip extends Model
     {
         parent::boot();
 
-        static::creating(function (Recipe $recipe) {
-            $recipe->slug = $recipe->slug ?? str($recipe->name)->slug();
+        static::creating(function (Tip $tip) {
+            $tip->slug = $tip->slug ?? str($tip->name)->slug();
         });
     }
 
