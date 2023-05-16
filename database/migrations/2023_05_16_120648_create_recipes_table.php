@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->string('slug');
-            $table->string('name');
-            $table->string('description');
+            $table->string('title');
+            $table->string('body');
             $table->string('image')->nullable();
             $table->foreignIdFor(User::class)
                 ->constrained()

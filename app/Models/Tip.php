@@ -13,8 +13,8 @@ class Tip extends Model
 
     protected $fillable = [
         'slug',
-        'name',
-        'description',
+        'title',
+        'body',
         'image',
         'user_id',
     ];
@@ -24,7 +24,7 @@ class Tip extends Model
         parent::boot();
 
         static::creating(function (Tip $tip) {
-            $tip->slug = $tip->slug ?? str($tip->name)->slug();
+            $tip->slug = $tip->slug ?? str($tip->title)->slug();
         });
     }
 

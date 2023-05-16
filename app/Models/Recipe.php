@@ -13,8 +13,8 @@ class Recipe extends Model
 
     protected $fillable = [
         'slug',
-        'name',
-        'description',
+        'title',
+        'body',
         'image',
         'user_id',
         'category_id'
@@ -25,7 +25,7 @@ class Recipe extends Model
         parent::boot();
 
         static::creating(function (Recipe $recipe) {
-            $recipe->slug = $recipe->slug ?? str($recipe->name)->slug();
+            $recipe->slug = $recipe->slug ?? str($recipe->title)->slug();
         });
     }
 
