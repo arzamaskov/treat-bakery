@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Category;
+use App\Models\Emoji;
 use App\Models\Ingredient;
 use App\Models\Recipe;
 use App\Models\Tag;
@@ -26,5 +27,6 @@ class DatabaseSeeder extends Seeder
 
         Ingredient::factory(100)->create();
         Tag::factory(25)->create();
+        Emoji::factory(10)->create();
     }
 }

@@ -39,13 +39,18 @@ class Recipe extends Model
         return  $this->belongsTo(Category::class);
     }
 
-    public function ingredient(): BelongsToMany
+    public function ingredients(): BelongsToMany
     {
         return $this->belongsToMany(Ingredient::class);
     }
 
-    public function tag(): BelongsToMany
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function emojis(): BelongsToMany
+    {
+        return $this->belongsToMany(Emoji::class);
     }
 }

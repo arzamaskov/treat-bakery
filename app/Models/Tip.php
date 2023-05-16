@@ -33,8 +33,13 @@ class Tip extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function tag(): BelongsToMany
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function emojis(): BelongsToMany
+    {
+        return $this->belongsToMany(Emoji::class);
     }
 }
