@@ -14,13 +14,18 @@ class Emoji extends Model
         'name',
     ];
 
-    public function recipe(): BelongsToMany
+    public function recipes(): BelongsToMany
     {
         return $this->belongsToMany(Recipe::class);
     }
 
-    public function tip(): BelongsToMany
+    public function tips(): BelongsToMany
     {
         return $this->belongsToMany(Tip::class);
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
     }
 }
