@@ -18,9 +18,9 @@ class RecipeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => ucfirst($this->faker->words(7, true)),
-            'description' => $this->faker->sentences(),
-            'image' => $this->faker->imageUrl(),
+            'title' => fake()->sentences(1, true),
+            'body' => fake()->paragraphs(2, true),
+            'image' => fake()->imageUrl(),
             'user_id' => User::query()->inRandomOrder()->value('id'),
             'category_id' => Category::query()->inRandomOrder()->value('id'),
         ];

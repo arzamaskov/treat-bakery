@@ -17,7 +17,7 @@ class TagFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => ucfirst($this->faker->words(rand(1, 2), true))
+            'name' => fake()->words(rand(1, 2), true),
         ];
     }
 }

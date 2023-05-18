@@ -18,9 +18,9 @@ class TipFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => ucfirst($this->faker->words(7, true)),
-            'description' => $this->faker->sentences(),
-            'image' => $this->faker->imageUrl(),
+            'title' => fake()->sentences(1, true),
+            'body' => fake()->paragraph(),
+            'image' => fake()->imageUrl(),
             'user_id' => User::query()->inRandomOrder()->value('id'),
         ];
     }
