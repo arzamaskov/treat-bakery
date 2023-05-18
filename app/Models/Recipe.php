@@ -53,4 +53,9 @@ class Recipe extends Model
     {
         return $this->belongsToMany(Emoji::class);
     }
+
+    public function comments(): MorphMany
+    {
+        return $this->morphMany(Comment::class, 'owner');
+    }
 }

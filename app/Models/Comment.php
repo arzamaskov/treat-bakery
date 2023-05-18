@@ -4,25 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Comment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'slug',
         'parent_id',
         'body',
         'owner_type',
-        'owner_id'
+        'owner_id',
     ];
 
-    protected static function boot(): void
+    public function owner(): MorphTo
     {
-        parent::boot();
-
-        static::creating(function (Comment $comment) {
-            $comment->slug = $comment->slug ?? str($comment->title)->slug();
-        });
+        return $this->morphTo();
     }
 }

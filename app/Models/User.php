@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Tip::class);
     }
+
+    public function comments(): MorphMany
+    {
+        return $this->morphMany(Comment::class, 'owner');
+    }
 }
