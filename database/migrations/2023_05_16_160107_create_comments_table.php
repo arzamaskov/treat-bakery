@@ -12,7 +12,7 @@ return new class() extends Migration {
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('parent_id');
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->string('body');
             $table->morphs('owner');
             $table->timestamps();
