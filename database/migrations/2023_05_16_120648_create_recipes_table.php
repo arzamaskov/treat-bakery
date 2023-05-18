@@ -15,7 +15,7 @@ return new class() extends Migration {
             $table->id();
             $table->string('slug');
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->string('image')->nullable();
             $table->foreignIdFor(User::class)
                 ->constrained()
