@@ -28,6 +28,10 @@ return new class() extends Migration {
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
+            $table->foreignIdFor(User::class)
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
         });
 
         Schema::create('emoji_tip', function (Blueprint $table) {
@@ -38,6 +42,10 @@ return new class() extends Migration {
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->foreignIdFor(Tip::class)
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
+            $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
