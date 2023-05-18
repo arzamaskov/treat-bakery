@@ -15,14 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(30)
-            ->has(Recipe::factory(10)->has(Category::factory(1)))
-            ->has(Tip::factory(2))
-            ->has(Comment::factory(5))
-            ->create();
-
+        Category::factory(20)->create();
         Ingredient::factory(100)->create();
         Tag::factory(25)->create();
         Emoji::factory(10)->create();
+
+        User::factory(30)
+            ->has(Recipe::factory()->count(5))
+            ->has(Tip::factory()->count(2))
+            ->has(Comment::factory()->count(3))
+            ->create();
     }
 }
