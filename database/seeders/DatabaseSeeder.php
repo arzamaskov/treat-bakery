@@ -4,14 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Category;
 use App\Models\Comment;
-use App\Models\Emoji;
-use App\Models\Ingredient;
-use App\Models\Recipe;
-use App\Models\Tag;
-use App\Models\Tip;
-use App\Models\User;
+use App\Models\{Category, Emoji, Ingredient, Recipe, Tag, Tip, User};
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

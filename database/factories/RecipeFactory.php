@@ -2,8 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
-use App\Models\User;
+use App\Models\{Category, User};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

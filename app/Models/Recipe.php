@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, BelongsToMany};
 
 class Recipe extends Model
 {
@@ -17,7 +17,7 @@ class Recipe extends Model
         'body',
         'image',
         'user_id',
-        'category_id'
+        'category_id',
     ];
 
     protected static function boot(): void
@@ -36,7 +36,7 @@ class Recipe extends Model
 
     public function category(): BelongsTo
     {
-        return  $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function ingredients(): BelongsToMany
