@@ -4,7 +4,6 @@ use Laravel\Telescope\Http\Middleware\Authorize;
 use Laravel\Telescope\Watchers;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Telescope Domain
@@ -91,17 +90,13 @@ return [
     |
     */
 
-    'only_paths' => [
-        // 'api/*'
-    ],
+    'only_paths' => [],
 
     'ignore_paths' => [
         'nova-api*',
     ],
 
-    'ignore_commands' => [
-        //
-    ],
+    'ignore_commands' => [],
 
     /*
     |--------------------------------------------------------------------------
