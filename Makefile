@@ -1,3 +1,6 @@
+build:
+	docker-compose build
+
 up:
 	docker-compose up -d --remove-orphans
 
@@ -9,6 +12,9 @@ restart:
 
 down:
 	docker-compose down
+
+clean:
+	docker-compose down -v
 
 ps:
 	docker-compose ps
